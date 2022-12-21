@@ -20,4 +20,9 @@ class Player extends Model
     {
         return $this->belongsTo(Game::class);
     }
+
+    public function selectedPlayer(): BelongsTo
+    {
+        return $this->belongsTo(Player::class);
+    }
 }
