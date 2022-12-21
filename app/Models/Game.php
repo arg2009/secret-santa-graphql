@@ -14,6 +14,10 @@ class Game extends Model
     use HasFactory;
     use HasUuids;
 
+    protected $guarded = [
+        'id',
+    ];
+
     protected $casts = [
         'date' => 'datetime',
     ];

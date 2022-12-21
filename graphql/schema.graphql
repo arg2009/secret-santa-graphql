@@ -7,6 +7,10 @@ type Query {
     ): Game @find
 }
 
+type Mutation {
+    createGame(party_name: String!, budget: String!, date: String!, place: String!): Game
+}
+
 type Game  {
     id: ID!
     party_name: String!

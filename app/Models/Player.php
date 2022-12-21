@@ -12,6 +12,10 @@ class Player extends Model
     use HasFactory;
     use HasUuids;
 
+    protected $guarded = [
+        'id',
+    ];
+
     public function game(): BelongsTo
     {
         return $this->belongsTo(Game::class);

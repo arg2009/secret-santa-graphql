@@ -24,7 +24,7 @@ class PlayerFactory extends Factory
         ];
     }
 
-    public function assigned()
+    public function assigned(): static
     {
         return $this->state(fn () => [
             'selected_player_id' => fn (array $attributes) => Player::factory([
