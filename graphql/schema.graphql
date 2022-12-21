@@ -13,4 +13,11 @@ type Game  {
     budget: String!
     date: DateTime!
     place: String!
+    players: [Player]
+}
+
+type Player {
+    id: ID!
+    name: String!
+    selected_player: Player
 }
