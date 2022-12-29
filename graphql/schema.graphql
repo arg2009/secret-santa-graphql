@@ -9,7 +9,7 @@ type Query {
 }
 
 type Mutation {
-    createGame(party_name: String!, budget: String!, date: String!, place: String!): Game
+    createGame(party_name: String!, budget: String!, date: String!, place: String!, playerNames: [String!]): Game
     addPlayerToGame(game_id: String!, name: String!): Game
     updatePlayer(player_id: String!, name: String): Player
     startGame(player_id: String!): Game

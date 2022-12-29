@@ -11,7 +11,7 @@ class CreateGame
 {
     public function __invoke($rootValue, array $args): Game
     {
-        return Game::create(Arr::only(
+        $game = Game::create(Arr::only(
             $args,
             [
                 'party_name',
@@ -20,5 +20,13 @@ class CreateGame
                 'place',
             ]
         ));
+
+        foreach (Arr::get($args, 'playerNames', []) as $playerName) {
+            $game->players()->create([
+                'name' => $playerName,
+            ]);
+        }
+
+        return $game;
     }
 }
